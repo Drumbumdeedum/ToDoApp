@@ -1,0 +1,119 @@
+body {
+  font-family: 'Roboto', sans-serif;
+  float: left;
+  margin-left: 400px;
+  background-color: lightgray;
+}
+
+table, th, td {
+  border: 2px solid black;
+  border-collapse: collapse;
+}
+
+table {
+  margin: 10px 10px 10px 10px;
+}
+
+h1 {
+  margin: 30px 0px 30px 150px;
+  background-color: cornflowerblue;
+  width: 250px;
+  padding: 10px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+.table {
+  white-space: nowrap;
+  width: 480px;
+}
+
+.idcolumn, .textcolumn, .texttitle,
+.booleancolumn, .booleancolumnfalse,
+.booleancolumntrue, .edit, .delete, .editcolumn {
+  padding-left: 10px;
+  padding-right: 10px;
+  text-align: left;
+  width: 100%;
+}
+
+.idcolumn, .texttitle, .booleancolumn, .removecolumn, .editcolumn {
+  background-color: burlywood;
+}
+
+.booleancolumntrue {
+  text-align: center;
+  background-color: green;
+}
+
+.booleancolumnfalse {
+  text-align: center;
+  background-color: red;
+}
+
+.textcolumn, .edit, .delete {
+  font-weight: normal;
+  background-color: beige;
+  width: 100%;
+}
+
+.texttitle {
+  text-align: center;
+}
+
+.switch {
+  width: 120px;
+  height: auto;
+  text-align: center;
+  color: darkgreen;
+  border: 1px solid black;
+  border-radius: 10px;
+  background-color: ghostwhite;
+  box-shadow: 3px 3px 3px royalblue;
+  font-weight: bold;
+  padding: 0px 5px 0px 5px;
+}
+
+.switch:hover, .buttontop:hover{
+  background-color: lightgray;
+  margin-left: 18px;
+}
+
+.switch {
+  margin-left: 20px;
+}
+
+.addtodo {
+  margin-top: 20px;
+  margin-left: 20px;
+}
+
+.delete {
+  padding: 0px 10px 0px 10px;
+  color: red;
+  font-weight: bold;
+  text-align: center;
+}
+
+.removecolumn, .edit {
+  text-align: center;
+  padding: 0px 5px 0px 5px;
+}
+
+.left {
+  float: left;
+}
+
+.right {
+  float: left;
+  margin-top: 146px;
+  background-color: cornflowerblue;
+  padding: 10px;
+  border: 3px solid black;
+  border-radius: 10px;
+}
+
+h4 {
+  margin: 0;
+  padding: 0;
+}

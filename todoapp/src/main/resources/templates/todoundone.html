@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+  <head>
+    <title>My To Dos</title>
+    <link rel="stylesheet" th:href="@{/style.css}"/>
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,500,700" rel="stylesheet"/>
+    <meta charset="utf-8" />
+  </head>
+
+  <body>
+    <table class="table">
+      <h1>To Dos for today:</h1>
+      <tr>
+        <th class="idcolumn">ID</th>
+        <th class="texttitle">To Do</th>
+        <th class="booleancolumn">It it done yet?</th>
+        <th class="booleancolumn">Is it urgent?</th>
+      </tr>
+      <tr th:each="todo : ${todos}">
+        <th class="idcolumn" th:if="${!todo.isDone()}" th:text="${todo.getId()}"/>
+        <th class="textcolumn" th:if="${!todo.isDone()}" th:text="${todo.getTitle()}"/>
+        <th class="booleancolumnfalse" th:if="${!todo.isDone()}">X</th>
+        <th class="booleancolumnfalse" th:if="${!todo.isDone()} and ${todo.isUrgent()}">URGENT!</th>
+        <th class="booleancolumntrue" th:if="${!todo.isDone()} and ${!todo.isUrgent()}">Nope, chill!</th>
+        <th th:if="${!todo.isDone()}"><a class="delete" style="text-decoration: none" th:href="${'/' + todo.getId() + '/delete'}">X</a></th>
+        <th th:if="${!todo.isDone()}"><a class="edit" style="text-decoration: none" th:href="${'/' + todo.getId() + '/edit'}">&#9998;</a></th>
+      </tr>
+    </table>
+    <a class="switch" style="text-decoration: none" href="/listall">Show all</a>
+    <form class="addtodo" action="/addtodo"> Add new To Do:
+      <input type="search" name="newTodo"/>
+      <input type="submit" value="Add"/>
+    </form>
+  </body>
+
+</html>
