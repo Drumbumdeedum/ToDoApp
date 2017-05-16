@@ -19,19 +19,19 @@ public class ToDoController {
 
   @RequestMapping(value = "/")
   public String home(Model model) {
-    model.addAttribute("todos", repository.findAll());
+    model.addAttribute("todos", repository.findAllById());
     return "todo";
   }
 
   @RequestMapping(value = "/listall")
   public String list(Model model) {
-    model.addAttribute("todos", repository.findAll());
+    model.addAttribute("todos", repository.findAllById());
     return "todo";
   }
 
   @RequestMapping(value = "/listundone")
   public String listundone(Model model) {
-    model.addAttribute("todos", repository.findAll());
+    model.addAttribute("todos", repository.findAllById());
     return "todoundone";
   }
 
@@ -40,21 +40,21 @@ public class ToDoController {
     if (!newTodo.equals("")) {
       repository.save(new ToDo(newTodo));
     }
-    model.addAttribute("todos", repository.findAll());
+    model.addAttribute("todos", repository.findAllById());
     return "redirect:/listall/";
   }
 
   @GetMapping("/{id}/delete")
   public String delete(@PathVariable long id, Model model) {
     repository.delete(id);
-    model.addAttribute("todos", repository.findAll());
+    model.addAttribute("todos", repository.findAllById());
     return"redirect:/listall/";
   }
 
   @GetMapping("/{id}/edit")
   public String editElement(@PathVariable long id, Model model) {
     model.addAttribute("todo", repository.findOne(id));
-    model.addAttribute("todos", repository.findAll());
+    model.addAttribute("todos", repository.findAllById());
     return "edit";
   }
 
